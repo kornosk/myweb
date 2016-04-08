@@ -304,7 +304,8 @@ jQuery(function ($) {
         
         // Set name of send button to 'Sending'
         $('#submit-button').prop('disabled', true);
-        $('#submit-button').text('Sending');
+        $('#submit-button').text('Sending...');
+        $this.find('input, textarea').prop('disabled', true);
 
         $.post( $action, $data, function( data ) {
 
@@ -320,6 +321,8 @@ jQuery(function ($) {
                 $this.before( '<div class="alert alert-success">'+data.message+'</div>' );
                 $this.find('input, textarea').val('');
             }
+
+            $this.find('input, textarea').prop('disabled', false);
 
         }, "json");
 
