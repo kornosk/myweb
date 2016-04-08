@@ -302,7 +302,16 @@ jQuery(function ($) {
 
         $this.prevAll('.alert').remove();
         
+        // Set name of send button to 'Sending'
+        $('#submit-bitton').prop('disabled', false);
+        $('#submit-bitton').text('Sending');
+
         $.post( $action, $data, function( data ) {
+
+            // Set back name of send button
+            $('#submit-bitton').prop('disabled', true);
+            $('#submit-bitton').text('Send Message');
+
             if( data.response=='error' ){
                 $this.before( '<div class="alert alert-danger">'+data.message+'</div>' );
             }

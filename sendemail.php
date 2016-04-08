@@ -71,8 +71,9 @@
     try {
         $sendgrid->send($gemail);
 
-        $result = array( 'response' => 'success', 'message'=>'<strong>Thank You!</strong>&nbsp; Your email has been delivered.' );
+        $result = array( 'response' => 'success', 'message'=>'<strong>Thank You!</strong>&nbsp; Your email has been sent.' );
     } catch(\SendGrid\Exception $e) {
+        echo json_encode(array('response' => 'Error'));
         $e->getCode();
         
         foreach($e->getErrors() as $er) {
