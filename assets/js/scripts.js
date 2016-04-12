@@ -1,6 +1,5 @@
 /*
-Author: Kornraphop Kawintiranon
-Author URL: trendytheme.net
+    Author: Kornraphop Kawintiranon
 */
 
 /*
@@ -137,7 +136,7 @@ jQuery(function ($) {
     $('.more-skill').bind('inview', function(event, visible, visiblePartX, visiblePartY) {
         if (visible) {
             $('.chart').easyPieChart({
-                //your configuration goes here
+                // Configuration goes here
                 easing: 'easeOut',
                 delay: 3000,
                 barColor:'#52b3d9',
